@@ -1,7 +1,6 @@
 <?php
 
 
-use Controllers\ArticleController;
 use Models\ArticleModel;
 use Models\FormModel;
 

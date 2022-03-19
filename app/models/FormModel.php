@@ -2,8 +2,6 @@
 
 namespace Models;
 
-use Models\Article;
-
 class FormModel extends Bdd
 {
 
