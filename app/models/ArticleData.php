@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Article{
+class ArticleData{
 
     private $id;
     private $titre;

@@ -1,10 +1,9 @@
 <?php
 
 
+use Controllers\FormController;
 use Controllers\HomeController;
 use Controllers\ArticleController;
-
-
 
 require '../vendor/autoload.php';
 
@@ -29,8 +28,18 @@ $router->map(
     'article'
 );
 
-$match = $router->match();
+$router->map(
+    'GET|POST',
+    '/form',
+    function () {        
+        //dans ma logique je fais toujours appele à une closure puisque ma condition
+        //check la présence d'une closure 'is_callable($match['target'])'.
+        //
+    },
+    'form'
+);
 
+$match = $router->match();
 
 
 if (is_array($match) && is_callable($match['target'])) {

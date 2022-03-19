@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Models;
 
 use Models\Bdd;

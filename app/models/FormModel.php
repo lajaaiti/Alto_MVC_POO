@@ -4,12 +4,10 @@ namespace Models;
 
 use Models\Article;
 
-class FormManager extends Bdd
+class FormModel extends Bdd
 {
 
-    // private $bdd = Bdd::getBdd();
-
-    public static function form(Article $article)
+    public static function form(ArticleData $article)
     {
 
         $titre = $article->getTitre();
@@ -18,19 +16,19 @@ class FormManager extends Bdd
         $bdd = Bdd::getBdd();
         $insert = $bdd->prepare("INSERT INTO articles(titre, description, contenu) VALUES (?, ?, ?)");
         $insert->execute(array(
-
             $titre,
             $description,
             $contenu
         ));
-        header('Location: /');
+        header('Location: /home');
     }
 
-    public static function delete($id)
+    public static function delete($idArticle)
     {
+        dump($idArticle);
         $bdd = Bdd::getBdd();
-        $delete = $bdd->prepare("DELETE FROM articles WHERE id = $id");
+        $delete = $bdd->prepare("DELETE FROM articles WHERE id = $idArticle");
         $delete->execute();
-        header('Location: /');
+        header('Location: /home');
     }
 }

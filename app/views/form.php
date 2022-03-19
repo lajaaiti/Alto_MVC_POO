@@ -1,16 +1,16 @@
 <?php
 
-use Models\Article;
-use Models\FormManager;
+use Models\ArticleData;
+use Models\FormModel;
 
 
 if (isset($_POST['submit'])) {
 
-    $article = new Article();    
+    $article = new ArticleData();    
     $article->setTitre(htmlspecialchars($_POST['titre']));
     $article->setDescription(htmlspecialchars($_POST['description']));
     $article->setContenu(htmlspecialchars($_POST['contenu']));
-    FormManager::form($article);
+    FormModel::form($article);
 }
 
 ?>

@@ -3,7 +3,7 @@
 
 use Controllers\ArticleController;
 use Models\ArticleModel;
-
+use Models\FormModel;
 
 $idArticle = $params['idArticle'];
 
@@ -11,6 +11,7 @@ $data = ArticleModel::articleId($idArticle);
 
 
 if (isset($_POST['supprimer'])) {
+    FormModel::delete($idArticle);
 }
 ?>
 
