@@ -23,6 +23,7 @@ class FormManager extends Bdd
             $description,
             $contenu
         ));
+        header('Location: /');
     }
 
     public static function delete($id)
