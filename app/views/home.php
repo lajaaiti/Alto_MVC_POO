@@ -1,9 +1,8 @@
 <?php
 
-use Models\HomeManager;
+use Models\HomeModel;
 
-
-$data = HomeManager::home();
+ $data = HomeModel::index();
 ?>
 
 <div class="container pt-5">
